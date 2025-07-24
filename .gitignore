@@ -1,0 +1,53 @@
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependency directories (Node, Python)
+node_modules/
+venv/
+env/
+dist/
+dist-ssr/
+
+# Local env files
+.env
+.env.*
+*.local
+
+# OS-generated files
+.DS_Store
+
+# Editor directories and project files
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# SQLite database
+*.sqlite3
+
+# Optional: lockfiles (recommended to **NOT** ignore, for reproducible installs)
+# package-lock.json
+# yarn.lock
+# requirements.txt
+
+# Misc
+*.bak
+*.tmp
+
+# You can add more patterns below as needed

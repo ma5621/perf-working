@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* RTL Support */
+.rtl {
+  direction: rtl;
+}
+
+.ltr {
+  direction: ltr;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #374151;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6b7280;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Smooth transitions */
+* {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Focus styles */
+button:focus,
+input:focus,
+select:focus {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+}
+
+/* Loading animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+
+
+
+/* Shiny Text Animation */
+@keyframes shine-ltr {
+    0% {
+      background-position: 200% center;
+    }
+    100% {
+      background-position: -200% center;
+    }
+  }
+  
+  @keyframes shine-rtl {
+    0% {
+      background-position: -200% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+  
+  .shiny-text {
+    /* Base text color (Gold) */
+    color: #DAA520;
+  
+    /* Theme-responsive gradients */
+    background-image: linear-gradient(
+      303deg,
+      #a47e1b 0%,
+      #a47e1b 20%,
+      #e5e4e2 25%, /* Platinum highlight (Dark Mode) */
+      #a47e1b 30%,
+      #a47e1b 70%,
+      #e5e4e2 75%, /* Second highlight to make it tile */
+      #a47e1b 80%,
+      #a47e1b 100%
+    );
+    /* For light mode, you might want a different highlight color, e.g., subtle white */
+    /* You can define a separate class or use a more complex gradient here if needed */
+    /* For now, this gradient is optimized for dark mode's platinum highlight */
+  
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  
+    /* Animation */
+    animation: shine-ltr 10s linear infinite; /* Default to LTR */
+  }
+  
+  /* Override for RTL direction */
+  .rtl .shiny-text {
+    animation: shine-rtl 10s linear infinite;
+  }
+  
+  /* Light mode specific gradient for shiny text */
+  .light .shiny-text {
+    background-image: linear-gradient(
+      303deg,
+      #FFD700 0%,
+      #FFD700 20%,
+      #FFFFFF 25%, /* Subtle white highlight (Light Mode) */
+      #FFD700 30%,
+      #FFD700 70%,
+      #FFFFFF 75%, /* Second highlight to make it tile */
+      #FFD700 80%,
+      #FFD700 100%
+    );
+  }
+  
